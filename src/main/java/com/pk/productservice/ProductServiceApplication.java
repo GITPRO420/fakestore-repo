@@ -11,9 +11,10 @@ public class ProductServiceApplication {
 	static Logger logger= LoggerFactory.getLogger(ProductServiceApplication.class);
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductServiceApplication.class, args);
 		logger.info("Application Started...");
 		logger.info("Application Started 2nd Time");
+		SpringApplication.run(ProductServiceApplication.class, args);
+
 	}
 
 }
