@@ -3,6 +3,8 @@ package com.pk.productservice.controllers;
 import com.pk.productservice.dto.FakeStoreProductDTO;
 import com.pk.productservice.models.Product;
 import com.pk.productservice.services.IProductServices;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+
+    Logger logger= LoggerFactory.getLogger(ProductController.class);
    private IProductServices iProductService;
     @Autowired
     public ProductController(IProductServices iProductService){
@@ -48,6 +52,11 @@ public class ProductController {
     @PatchMapping("/{id}")
     public Product  patchProduct(@PathVariable("id") Long id, @RequestBody FakeStoreProductDTO  products){
         return iProductService.patchProduct(id,products);
+    }
+
+    @DeleteMapping("/{id}")
+    public Product deleteProduct(@PathVariable("id") Long id){
+        return iProductService.deleteProduct(id);
     }
 
 }

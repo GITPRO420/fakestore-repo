@@ -2,8 +2,6 @@ package com.pk.productservice.services;
 
 import com.pk.productservice.dto.FakeStoreProductDTO;
 import com.pk.productservice.models.Product;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.List;
 
 public interface IProductServices {
@@ -19,4 +17,6 @@ public interface IProductServices {
     Product updateProduct(Long id, FakeStoreProductDTO products);
 
     Product patchProduct(Long id, FakeStoreProductDTO products);
+
+    Product deleteProduct(Long id);
 }
