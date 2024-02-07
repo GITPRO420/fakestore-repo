@@ -12,7 +12,10 @@ class ProductServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 		logger.info("Testing...");
+		logger.info("Testing...");
+		logger.info("Testing 3rd time");
 	}
 
 }
