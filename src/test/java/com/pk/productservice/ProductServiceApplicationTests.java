@@ -15,7 +15,6 @@ class ProductServiceApplicationTests {
 
 		logger.info("Testing...");
 		logger.info("Testing...");
-		logger.info("Testing 3rd time");
 	}
 
 }
