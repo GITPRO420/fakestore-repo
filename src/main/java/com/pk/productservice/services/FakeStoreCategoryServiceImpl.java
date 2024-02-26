@@ -1,6 +1,6 @@
 package com.pk.productservice.services;
 
-import com.pk.productservice.dto.FakeStoreProductDTO;
+import com.pk.productservice.dto.ProductDto;
 import com.pk.productservice.models.Categories;
 import com.pk.productservice.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class FakeStoreCategoryServiceImpl implements ICatagoryServices {
 
     @Override
     public List<Product> getSpecificCategory(String category) {
-       List<FakeStoreProductDTO> listFakeStoreCatDto=List.of(restTemplate.getForObject("https://fakestoreapi.com/products/category/"+category,FakeStoreProductDTO[].class));
+       List<ProductDto> listFakeStoreCatDto=List.of(restTemplate.getForObject("https://fakestoreapi.com/products/category/"+category,ProductDto[].class));
         List<Product>productList=new ArrayList<>();
         listFakeStoreCatDto.forEach(e->{
             productList.add(fakeStoreProductServiceImpl.fakeStoreProductToProductObject(e));
